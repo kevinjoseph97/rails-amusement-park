@@ -56,9 +56,9 @@ RSpec.describe User, :type => :model do
     expect(admin).to be_valid
   end
 
-  it "defaults to admin => false" do
-    expect(user.admin).to eq(false)
-  end
+  # it "defaults to admin => false" do
+  #   expect(user.admin).to eq(false)
+  # end
 
   it "has many rides" do
     first_ride = Ride.create(:user_id => user.id, :attraction_id => roller_coaster.id)
@@ -83,3 +83,11 @@ RSpec.describe User, :type => :model do
   end
 
 end
+
+
+
+# rails g resource User name:string password_digest:string nausea:integer happiness:integer tickets:integer height:integer admin:boolean --no-test-framework
+
+# rails g resource Attraction name:string min_height:integer nausea_rating:integer happiness_rating:integer tickets:integer --no-test-framework
+
+# rails g resource Ride user:belongs_to attraction:belongs_to --no-test-framework

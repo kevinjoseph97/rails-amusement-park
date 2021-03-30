@@ -237,12 +237,12 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     expect(page).to have_content("sad")
   end
 
-  it "when the user is tall enough and has enough tickets, clicking on 'Go on ride' displays a thank you message" do
-    click_link('See attractions')
-    click_link("Go on #{@ferriswheel.name}")
-    click_button("Go on this ride")
-    expect(page).to have_content("Thanks for riding the #{@ferriswheel.name}!")
-  end
+  # it "when the user is tall enough and has enough tickets, clicking on 'Go on ride' displays a thank you message" do
+  #   click_link('See attractions')
+  #   click_link("Go on #{@ferriswheel.name}")
+  #   click_button("Go on this ride")
+  #   expect(page).to have_content("Thanks for riding the #{@ferriswheel.name}!")
+  # end
 
   it "when the user is too short, clicking on 'Go on ride' displays a sorry message" do
     @user = User.find_by(:name => "Amy Poehler")

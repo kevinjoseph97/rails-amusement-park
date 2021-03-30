@@ -21,6 +21,17 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+
+          <% if logged_in %>
+               <%= link_to "#{current_user.name}'s profile", current_user %>
+               <%= link_to "Log Out", signout_path%>
+               <% if admin %>
+                 <span class="navbar-brand">ADMIN</span>
+               <% end %>
+            <% else %>
+               <%= link_to "Sign In", signin_path%>
+              
+          <% end %>
             
           </ul>
         </div><!--/.nav-collapse -->
